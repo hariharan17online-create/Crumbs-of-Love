@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed! | Crumbs of Love</title>
+  <meta name="description" content="Thank you for your order! Your fresh healthy brownies are being scheduled for baking." />
+  <link rel="icon" type="image/jpeg" href="/assets/logo-Dd2usEVB.jpeg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cocoa: {
+              DEFAULT: '#1E120C',
+              deep: '#120A06',
+              surface: '#2B1A11',
+              light: '#352116',
+              muted: '#52392B',
+            },
+            brown: {
+              DEFAULT: '#3B2314',
+              rich: '#2E190C',
+              warm: '#4D301C',
+            },
+            caramel: {
+              DEFAULT: '#C08552',
+              light: '#DDA675',
+              dark: '#A36836',
+              glow: 'rgba(192, 133, 82, 0.25)',
+            },
+            cream: {
+              DEFAULT: '#FAF5EE',
+              soft: '#F4ECE0',
+              dark: '#EBE0CF',
+            },
+            'warm-white': '#FFFDF9',
+            gold: {
+              DEFAULT: '#C9A66B',
+              light: '#E2C792',
+              dark: '#9E7A3D',
+              glow: 'rgba(201, 166, 107, 0.3)',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"Fraunces"', '"Playfair Display"', 'Georgia', 'serif'],
+          },
+          fontSize: {
+            '2xs': '0.65rem',
+            'fluid-hero': 'clamp(2.75rem, 8vw, 7.5rem)',
+            'fluid-h1': 'clamp(2.25rem, 5.5vw, 5rem)',
+            'fluid-h2': 'clamp(1.75rem, 4vw, 3.5rem)',
+            'fluid-h3': 'clamp(1.25rem, 2.5vw, 2.25rem)',
+          },
+          borderRadius: {
+            '3xl': '1.75rem',
+            '4xl': '2.25rem',
+            '5xl': '3rem',
+          },
+          boxShadow: {
+            'subtle': '0 4px 20px -2px rgba(30, 18, 12, 0.05)',
+            'elevated': '0 20px 40px -15px rgba(30, 18, 12, 0.12)',
+            '2xs': '0 1px 2px 0 rgba(30, 18, 12, 0.05)',
+          },
+          animation: {
+            'marquee': 'marquee 28s linear infinite',
+            'float-slow': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- External CDN Libraries (Loaded first before custom scripts) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <script type="module" crossorigin src="/assets/success-DyjQ-P55.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-Bzb-fitW.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-olNI3jij.css">
+  <link rel="stylesheet" crossorigin href="/assets/output-C58MjfSm.css">
+</head>
+<body class="bg-cream text-cocoa antialiased selection:bg-caramel selection:text-warm-white relative overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Header -->
+  <header class="py-6 px-4 sm:px-8 border-b border-caramel/15 bg-warm-white text-center">
+    <a href="index.html" class="inline-flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-full overflow-hidden border border-caramel/30 p-0.5 bg-cream-soft">
+        <img src="/assets/logo-Dd2usEVB.jpeg" alt="Crumbs of Love" class="w-full h-full object-cover rounded-full" />
+      </div>
+      <span class="font-serif text-2xl font-bold tracking-tight text-cocoa">
+        Crumbs of Love
+      </span>
+    </a>
+  </header>
+
+  <!-- Success Main Content -->
+  <main class="flex-1 max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16 w-full space-y-8">
+    
+    <!-- Top Celebration Card -->
+    <div class="bg-warm-white rounded-3xl p-8 sm:p-12 border border-caramel/20 shadow-xl text-center space-y-6">
+      
+      <!-- Icon -->
+      <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-700 shadow-md">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-caramel">Order Confirmed & Scheduled</span>
+        <h1 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-cocoa tracking-tight leading-tight">
+          Your Brownies Are Heading<br class="sm:hidden" /> to the Oven!
+        </h1>
+        <p class="text-sm text-cocoa-muted max-w-lg mx-auto leading-relaxed">
+          Thank you for choosing healthier, honest indulgence. Baker Gopika will freshly bake your batch and hand-pack it with care.
+        </p>
+      </div>
+
+      <!-- Order ID Badge -->
+      <div class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-cream-soft border border-caramel/20 text-xs font-mono font-bold text-cocoa">
+        <span>Order Reference:</span>
+        <span id="display-order-id" class="text-caramel-dark font-black">COL-849201</span>
+      </div>
+
+      <!-- Baking Timeline Tracker -->
+      <div class="pt-8 border-t border-caramel/15">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-cocoa-muted mb-6">Live Baking Status</h4>
+        <div class="grid grid-cols-4 gap-2 text-center text-2xs sm:text-xs">
+          
+          <div class="space-y-2">
+            <div class="w-8 h-8 mx-auto rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+            <span class="font-bold text-cocoa block">Order Placed</span>
+          </div>
+
+          <div class="space-y-2">
+            <div class="w-8 h-8 mx-auto rounded-full bg-amber-500 text-white flex items-center justify-center font-bold animate-pulse">
+              <i data-lucide="flame" class="w-4 h-4"></i>
+            </div>
+            <span class="font-bold text-amber-900 block">Fresh Baking</span>
+          </div>
+
+          <div class="space-y-2 opacity-40">
+            <div class="w-8 h-8 mx-auto rounded-full bg-cocoa-muted/30 text-cocoa flex items-center justify-center font-bold">
+              <i data-lucide="gift" class="w-4 h-4"></i>
+            </div>
+            <span class="font-medium text-cocoa block">Gift Boxing</span>
+          </div>
+
+          <div class="space-y-2 opacity-40">
+            <div class="w-8 h-8 mx-auto rounded-full bg-cocoa-muted/30 text-cocoa flex items-center justify-center font-bold">
+              <i data-lucide="truck" class="w-4 h-4"></i>
+            </div>
+            <span class="font-medium text-cocoa block">Dispatched</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Order Details Container -->
+    <div id="order-details-card" class="bg-warm-white rounded-3xl p-6 sm:p-8 border border-caramel/15 shadow-subtle space-y-6">
+      <h3 class="font-serif text-xl font-bold text-cocoa pb-3 border-b border-caramel/10">Order Summary</h3>
+      
+      <div id="success-items-list" class="space-y-3 divide-y divide-caramel/10">
+        <!-- Injected via JavaScript from localStorage -->
+      </div>
+
+      <!-- Delivery info summary -->
+      <div id="success-customer-details" class="pt-4 border-t border-caramel/15 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+      <button id="whatsapp-order-confirm-btn" class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center space-x-2">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>Message Baker on WhatsApp (+91 70109 87334)</span>
+      </button>
+
+      <button onclick="window.print()" class="w-full sm:w-auto px-6 py-4 rounded-full bg-warm-white text-cocoa font-semibold text-xs border border-caramel/25 hover:bg-cream-soft transition-all inline-flex items-center justify-center space-x-2">
+        <i data-lucide="printer" class="w-4 h-4"></i>
+        <span>Print Receipt</span>
+      </button>
+
+      <a href="shop.html" class="w-full sm:w-auto px-6 py-4 rounded-full bg-cocoa text-warm-white font-semibold text-xs hover:bg-brown transition-all text-center">
+        Explore More Brownies
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-xs text-cocoa-muted border-t border-caramel/15 bg-cream">
+    <p>© 2026 Crumbs of Love. Made with love.</p>
+  </footer>
+
+</body>
+</html>

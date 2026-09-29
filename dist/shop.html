@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Sweet Menu | Crumbs of Love Artisanal Bakery</title>
+  <meta name="description" content="Explore our complete menu of fresh-baked healthy brownies. Classic Fudge, Kashmiri Walnut, 85% Sea Salt Noir, Date & Oats, and pure Eggless varieties." />
+  <link rel="icon" type="image/jpeg" href="/assets/logo-Dd2usEVB.jpeg" />
+
+  <!-- Google Fonts: Bungee (Headings) + Instrument Sans / Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ovena: {
+              cream: '#F6EBDD',
+              card: '#FCFCFA',
+              soft: '#F6F1E9',
+              red: '#981C0A',
+              'red-dark': '#801708',
+              dark: '#2C201B',
+              muted: '#72665D',
+              border: '#E7DDD2',
+              footer: '#4A3327',
+              'footer-light': '#F5EDE3',
+              gold: '#D78A41',
+            },
+            cocoa: {
+              DEFAULT: '#2C201B',
+              deep: '#1A120E',
+              surface: '#382820',
+              light: '#4A352A',
+              muted: '#72665D',
+            },
+            brown: {
+              DEFAULT: '#4A3327',
+              rich: '#382419',
+              warm: '#5C3F2F',
+            },
+            caramel: {
+              DEFAULT: '#981C0A',
+              light: '#B22A16',
+              dark: '#801708',
+              glow: 'rgba(152, 28, 10, 0.25)',
+            },
+            cream: {
+              DEFAULT: '#F6EBDD',
+              soft: '#FCFCFA',
+              dark: '#E7DDD2',
+            },
+            'warm-white': '#FCFCFA',
+            gold: {
+              DEFAULT: '#D78A41',
+              light: '#E5A467',
+              dark: '#B56D28',
+              glow: 'rgba(215, 138, 65, 0.3)',
+            }
+          },
+          fontFamily: {
+            display: ['"Bungee"', '"Archivo Black"', 'sans-serif'],
+            serif: ['"Bungee"', '"Playfair Display"', 'serif'],
+            sans: ['"Instrument Sans"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- External CDN Libraries (Optimized & Deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- CSS Stylesheets -->
+  <script type="module" crossorigin src="/assets/shop-DFrIiAqI.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-Bzb-fitW.js">
+  <link rel="modulepreload" crossorigin href="/assets/products-CXsmNHtQ.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-olNI3jij.css">
+  <link rel="stylesheet" crossorigin href="/assets/output-C58MjfSm.css">
+</head>
+<body class="bg-[#F6EBDD] text-[#2C201B] antialiased selection:bg-[#981C0A] selection:text-[#FCFCFA] relative overflow-x-clip min-h-screen flex flex-col justify-between">
+
+  <!-- Tactile Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Quick Search Modal -->
+  <div id="quick-search-modal" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300 flex items-start justify-center pt-20 px-4">
+    <div class="fixed inset-0 bg-[#2C201B]/70 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-xl bg-[#FCFCFA] rounded-3xl p-6 shadow-2xl border border-[#E7DDD2] pointer-events-auto space-y-4">
+      <div class="flex items-center justify-between border-b border-[#E7DDD2] pb-3">
+        <div class="flex items-center space-x-3 flex-1">
+          <svg class="w-5 h-5 text-[#72665D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" id="quick-search-input" placeholder="Search brownies, ingredients, gift boxes..." class="w-full bg-transparent text-sm text-[#2C201B] focus:outline-none placeholder:text-[#72665D]/60" />
+        </div>
+        <button id="search-modal-close" class="p-1 rounded-full text-[#72665D] hover:text-[#2C201B] hover:bg-[#F6EBDD]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="quick-search-results" class="max-h-72 overflow-y-auto space-y-1">
+        <div class="py-6 text-center text-xs text-[#72665D]">Start typing to search fresh brownies...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Animated Mobile Menu -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-[9990] pointer-events-none opacity-0 bg-[#4A3526] text-[#FCFCFA] transition-opacity duration-400 flex flex-col justify-between p-8 sm:p-12">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="/assets/logo-Dd2usEVB.jpeg" alt="Logo" class="w-10 h-10 rounded-full border border-[#D98F4E]/30 object-cover" />
+        <span class="font-display text-lg font-bold text-[#FCFCFA]">CRUMBS OF LOVE</span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-full text-[#FCFCFA]/70 hover:text-[#FCFCFA] hover:bg-white/10" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <nav class="space-y-6 my-auto font-display text-2xl sm:text-3xl uppercase tracking-wider">
+      <div><a href="index.html" class="mobile-nav-link block hover:text-[#D98F4E] transition-colors">HOME</a></div>
+      <div><a href="shop.html" class="mobile-nav-link block text-[#D98F4E] transition-colors">OUR SWEET MENU</a></div>
+      <div><a href="index.html#story" class="mobile-nav-link block hover:text-[#D98F4E] transition-colors">OUR STORY</a></div>
+      <div><a href="index.html#why-choose-us" class="mobile-nav-link block hover:text-[#D98F4E] transition-colors">WHY CHOOSE US</a></div>
+      <div><a href="index.html#custom-order" class="mobile-nav-link block hover:text-[#D98F4E] transition-colors">CUSTOM ORDERS</a></div>
+      <div><a href="index.html#faq" class="mobile-nav-link block hover:text-[#D98F4E] transition-colors">FAQ</a></div>
+    </nav>
+
+    <div class="pt-6 border-t border-white/10 text-xs text-[#FCFCFA]/70 flex justify-between">
+      <span>Order on WhatsApp:</span>
+      <a href="https://wa.me/917010987334" class="font-bold text-[#D98F4E]">+91 70109 87334</a>
+    </div>
+  </div>
+
+  <!-- UNIFIED OVENA 1:1 HEADER SECTION (Solid Cream #F5EBDD Wrapper, Zero Striping) -->
+  <header id="site-header" class="sticky top-0 z-50 w-full bg-[#F5EBDD] transition-all duration-300">
+    <div class="w-full max-w-[1240px] mx-auto px-3 sm:px-6 md:px-8 pt-3 sm:pt-4 pb-3 sm:pb-4 flex flex-col items-center">
+      
+      <!-- Top Utility Strip: Rounded Pill Promo Tag -->
+      <div id="top-utility-strip" class="w-full flex items-center justify-center mb-2.5 sm:mb-3 transition-all duration-300">
+        <div class="inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#FCFCFA] border border-[#E7DDD2] shadow-xs text-center transition-transform hover:scale-102">
+          <span class="inline-block w-2 h-2 rounded-full bg-[#981C0A] animate-pulse"></span>
+          <span class="font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-widest text-[#981C0A] inline-flex items-center">
+            <i data-lucide="sparkles" class="w-3 h-3 text-[#D98F4E] inline-block mr-1"></i>BAKED TO ORDER • HANDCRAFTED FRESH DAILY
+          </span>
+        </div>
+      </div>
+
+      <!-- Floating Pill Navbar Container -->
+      <nav id="main-navbar" class="w-full max-w-[1150px] bg-[#FBF3E7] border border-[#E7DDD2] rounded-full px-4 xs:px-5 sm:px-7 py-3 sm:py-3.5 shadow-[0_8px_30px_rgb(44,32,27,0.06)] flex items-center justify-between relative transition-all duration-300">
+        
+        <!-- Left: Logo Icon + "CRUMBS OF LOVE" Heavy Display Logotype -->
+        <a href="index.html" class="flex items-center space-x-2 sm:space-x-3.5 group min-w-0 flex-shrink" aria-label="Crumbs of Love Home">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#E7DDD2] p-0.5 bg-[#F6EBDD] flex-shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+            <img src="/assets/logo-Dd2usEVB.jpeg" alt="Crumbs of Love Logo" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <span class="font-display text-xs sm:text-xl md:text-2xl font-bold tracking-tight text-[#2C201B] uppercase group-hover:text-[#981C0A] transition-colors leading-none truncate">
+            CRUMBS OF LOVE
+          </span>
+        </a>
+
+        <!-- Right: Actions (Search + Outline Pill "Box" + Solid Maroon Pill "Menu", ~12px gap) -->
+        <div class="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+          
+          <!-- Search Trigger Icon Button -->
+          <button data-search-trigger class="p-1.5 sm:p-2 rounded-full hover:bg-[#F6EBDD] text-[#2C201B] transition-colors" aria-label="Search brownies">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+
+          <!-- Outline Pill: "Box" with Cart/Bag Icon (rounded-full, maroon border/text, 12px gap) -->
+          <button data-cart-open class="cart-trigger-btn flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-transparent hover:bg-[#981C0A]/5 border border-[#981C0A] text-[#981C0A] font-sans font-bold text-xs sm:text-sm transition-all active:scale-95" aria-label="Open brownie box">
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#981C0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <span class="hidden sm:inline">Box</span>
+            <span class="cart-count-badge hidden px-1.5 py-0.2 text-[10px] font-bold rounded-full bg-[#981C0A] text-[#FCFCFA]">0</span>
+          </button>
+
+          <!-- Solid Maroon Pill: "Menu" with Hamburger Icon -->
+          <button id="nav-menu-btn" class="bg-[#981C0A] hover:bg-[#801708] text-[#FCFCFA] px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-sans font-bold text-xs sm:text-sm tracking-wide flex items-center space-x-1.5 sm:space-x-2 transition-all shadow-md active:scale-95" aria-label="Open menu">
+            <span>Menu</span>
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FCFCFA]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+
+        </div>
+
+        <!-- Ovena Floating Menu Dropdown Panel -->
+        <div id="nav-menu-dropdown" class="absolute top-[calc(100%+12px)] right-2 sm:right-6 w-72 bg-[#FCFCFA] rounded-3xl border border-[#E7DDD2] shadow-2xl p-6 space-y-4 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 z-50">
+          <div class="flex items-center justify-between pb-3 border-b border-[#E7DDD2]">
+            <span class="text-2xs font-bold uppercase tracking-widest text-[#981C0A]">Quick Navigation</span>
+            <button id="nav-menu-dropdown-close" class="p-1 rounded-full text-[#72665D] hover:text-[#2C201B] hover:bg-[#F6EBDD] transition-colors" aria-label="Close menu">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <nav class="space-y-2.5 font-display text-xs tracking-wider text-[#2C201B]">
+            <a href="index.html" class="block py-1 hover:text-[#981C0A] transition-colors">HOME</a>
+            <a href="shop.html" class="block py-1 text-[#981C0A] font-bold">OUR SWEET MENU</a>
+            <a href="index.html#story" class="block py-1 hover:text-[#981C0A] transition-colors">OUR STORY</a>
+            <a href="index.html#why-choose-us" class="block py-1 hover:text-[#981C0A] transition-colors">WHY CHOOSE US</a>
+            <a href="index.html#custom-order" class="block py-1 hover:text-[#981C0A] transition-colors">CUSTOM ORDERS</a>
+            <a href="index.html#faq" class="block py-1 hover:text-[#981C0A] transition-colors">FAQ</a>
+          </nav>
+          <div class="pt-3 border-t border-[#E7DDD2] space-y-2">
+            <a href="https://wa.me/917010987334" target="_blank" class="w-full flex items-center justify-center space-x-2 py-2.5 px-4 rounded-full bg-[#981C0A] text-[#FCFCFA] font-bold text-xs hover:bg-[#801708] transition-colors">
+              <span>Order on WhatsApp</span>
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN SHOP CONTENT -->
+  <main class="flex-1 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-16 w-full space-y-12">
+    
+    <!-- Ovena Centered Header -->
+    <div class="text-center space-y-3 max-w-2xl mx-auto">
+      <div class="inline-flex items-center space-x-2 text-2xs font-bold uppercase tracking-widest text-[#981C0A]">
+        <svg class="w-4 h-4 text-[#D98F4E]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+        <span>OUR SWEET MENU</span>
+      </div>
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-black text-[#2C201B] uppercase tracking-tight">
+        ALL FRESH-BAKED TREATS
+      </h1>
+      <p class="text-xs sm:text-sm md:text-base text-[#72665D] leading-relaxed">
+        Choose your favorites below. Each recipe is baked fresh to order in small batches using 70%+ dark cocoa, organic raw jaggery, and unrefined ingredients. Available in Boxes of 4, 6, or 12.
+      </p>
+    </div>
+
+    <!-- Category Pills & Search Controls -->
+    <div class="space-y-6 pt-2">
+      
+      <!-- Category Filter Pills -->
+      <div class="flex items-center justify-start sm:justify-center space-x-2 overflow-x-auto pb-2 no-scrollbar">
+        <button data-filter-category="All" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#981C0A] text-[#FCFCFA] shadow-sm flex-shrink-0">
+          All Treats
+        </button>
+        <button data-filter-category="Classic" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FCFCFA] text-[#2C201B] hover:bg-[#F6EBDD] border border-[#E7DDD2] flex-shrink-0">
+          Classic Fudge
+        </button>
+        <button data-filter-category="Nutty" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FCFCFA] text-[#2C201B] hover:bg-[#F6EBDD] border border-[#E7DDD2] flex-shrink-0">
+          Roasted Nuts
+        </button>
+        <button data-filter-category="Eggless" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FCFCFA] text-[#2C201B] hover:bg-[#F6EBDD] border border-[#E7DDD2] flex-shrink-0">
+          100% Eggless
+        </button>
+        <button data-filter-category="Guilt-Free" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FCFCFA] text-[#2C201B] hover:bg-[#F6EBDD] border border-[#E7DDD2] flex-shrink-0">
+          Sugar-Free / Oats
+        </button>
+        <button data-filter-category="Gift Boxes" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FCFCFA] text-[#2C201B] hover:bg-[#F6EBDD] border border-[#E7DDD2] flex-shrink-0">
+          Luxury Hampers
+        </button>
+      </div>
+
+      <!-- Secondary Search & Sort Bar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+        <div class="relative w-full sm:w-80">
+          <input 
+            type="text" 
+            id="shop-search-input" 
+            placeholder="Search flavor or ingredient..." 
+            class="w-full pl-10 pr-4 py-2.5 rounded-full border border-[#E7DDD2] bg-[#FCFCFA] text-xs text-[#2C201B] focus:outline-none focus:border-[#981C0A] placeholder:text-[#72665D]/60 shadow-sm"
+          />
+          <svg class="w-4 h-4 text-[#72665D] absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+
+        <div class="flex items-center justify-between w-full sm:w-auto space-x-4">
+          <span id="shop-results-count" class="text-xs text-[#72665D] font-medium">Showing all healthy treats</span>
+          
+          <div class="flex items-center space-x-2">
+            <label for="shop-sort-select" class="text-2xs uppercase tracking-wider text-[#72665D] font-bold">Sort:</label>
+            <select id="shop-sort-select" class="px-3 py-2 rounded-xl border border-[#E7DDD2] bg-[#FCFCFA] text-xs font-medium text-[#2C201B] focus:outline-none focus:border-[#981C0A] shadow-sm">
+              <option value="featured">Featured First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Product Grid: 4-Cols Desktop / 2-Cols Tablet / 1-Col Mobile Ovena Cards -->
+    <div id="shop-product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-6 pt-4">
+      <!-- Injected via JavaScript from data.js -->
+    </div>
+
+    <!-- Custom Celebrations Callout Card -->
+    <div class="mt-16 p-8 sm:p-12 rounded-3xl bg-[#FCFCFA] border border-[#E7DDD2] flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+      <div class="space-y-2 max-w-xl text-center md:text-left">
+        <span class="text-2xs font-bold uppercase tracking-widest text-[#981C0A]">CUSTOM CELEBRATIONS</span>
+        <h3 class="font-display text-2xl sm:text-3xl font-bold text-[#2C201B] uppercase">NEED A CUSTOM ASSORTMENT OR BULK BOXES?</h3>
+        <p class="text-xs sm:text-sm text-[#72665D] leading-relaxed">
+          Order directly via WhatsApp for corporate hampers, personalized birthday messages, or special dietary customization.
+        </p>
+      </div>
+
+      <a href="https://wa.me/917010987334?text=Hi%20Gopika!%20I%20would%20like%20to%20customize%20a%20brownie%20order." target="_blank" class="pill-btn-solid flex-shrink-0">
+        <span>Chat on WhatsApp</span>
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- OVENA 1:1 REFERENCE FOOTER (Dark Cocoa Brown with Wavy Top) -->
+  <footer class="relative bg-[#4A3526] text-[#F5EDE3] pt-16 pb-10 select-none overflow-hidden mt-12">
+    <!-- Wavy Top Divider blending from Cream section above -->
+    <div class="scallop-divider-top pointer-events-none">
+      <svg class="w-full h-8 sm:h-12 text-[#F6EBDD] fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,0 L0,0 Z"></path>
+      </svg>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 pt-8 space-y-12">
+      
+      <!-- Top Area: 3 Columns with thin vertical divider lines -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-xs">
+        
+        <!-- Column 1: Contact Info -->
+        <div class="space-y-4">
+          <span class="text-2xs font-bold uppercase tracking-widest text-[#D98F4E] block">CONTACT</span>
+          <div class="space-y-2 text-[#F5EDE3]/85 text-xs sm:text-sm leading-relaxed">
+            <p>Artisanal Home Bakery Studio, Chennai, Tamil Nadu</p>
+            <p><a href="https://wa.me/917010987334" class="font-bold text-[#F5EDE3] hover:text-[#D98F4E] transition-colors">+91 70109 87334</a></p>
+            <p class="text-xs text-[#F5EDE3]/60">Mon – Sun 8:00 AM – 8:00 PM (Baking Daily)</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links (with thin vertical divider) -->
+        <div class="md:border-l md:border-[#6A4A3A] md:pl-10 space-y-4">
+          <span class="text-2xs font-bold uppercase tracking-widest text-[#D98F4E] block">QUICK LINKS</span>
+          <nav class="space-y-2.5 font-display text-xs tracking-wider">
+            <div><a href="index.html" class="hover:text-[#D98F4E] transition-colors">HOME</a></div>
+            <div><a href="shop.html" class="hover:text-[#D98F4E] transition-colors">OUR SWEET MENU</a></div>
+            <div><a href="index.html#story" class="hover:text-[#D98F4E] transition-colors">OUR STORY</a></div>
+            <div><a href="index.html#why-choose-us" class="hover:text-[#D98F4E] transition-colors">WHY CHOOSE US</a></div>
+            <div><a href="index.html#custom-order" class="hover:text-[#D98F4E] transition-colors">CUSTOM ORDERS</a></div>
+          </nav>
+        </div>
+
+        <!-- Column 3: Social Links (with thin vertical divider) -->
+        <div class="md:border-l md:border-[#6A4A3A] md:pl-10 space-y-4">
+          <span class="text-2xs font-bold uppercase tracking-widest text-[#D98F4E] block">SOCIAL LINKS</span>
+          <nav class="space-y-2.5 font-display text-xs tracking-wider">
+            <div><a href="https://instagram.com/crumbsoflove" target="_blank" class="hover:text-[#D98F4E] transition-colors">INSTAGRAM</a></div>
+            <div><a href="https://wa.me/917010987334" target="_blank" class="hover:text-[#D98F4E] transition-colors">WHATSAPP ORDER</a></div>
+            <div><a href="https://facebook.com/crumbsoflove" target="_blank" class="hover:text-[#D98F4E] transition-colors">FACEBOOK</a></div>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Infinite Auto-Scrolling Marquee (Full-Width, Never Clipped) -->
+    <div class="w-full my-8 sm:my-14 border-y border-[#6A4A3A]/40 py-4 sm:py-7 overflow-hidden footer-marquee-container" aria-label="Crumbs of Love Marquee">
+      <div class="footer-marquee-track">
+        <div class="footer-marquee-group" aria-hidden="false">
+          <span class="font-display text-[12vw] sm:text-[10vw] md:text-[8.5vw] lg:text-[7.5vw] leading-none text-[#F5EDE3] tracking-tight uppercase whitespace-nowrap opacity-95 inline-flex items-center">
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+          </span>
+        </div>
+        <div class="footer-marquee-group" aria-hidden="true">
+          <span class="font-display text-[12vw] sm:text-[10vw] md:text-[8.5vw] lg:text-[7.5vw] leading-none text-[#F5EDE3] tracking-tight uppercase whitespace-nowrap opacity-95 inline-flex items-center">
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+            <span>CRUMBS OF LOVE</span><span class="mx-6 sm:mx-10 text-[#D98F4E] opacity-80 text-[0.6em]">•</span>
+          </span>
+        </div>
+      </div>
+      <!-- Fallback static fitted wordmark for prefers-reduced-motion -->
+      <div class="footer-marquee-static hidden font-display text-center leading-none text-[#F5EDE3] tracking-tight uppercase px-4">
+        CRUMBS OF LOVE
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Copyright left, social text links right -->
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-[#F5EDE3]/60 gap-4 pt-2">
+        <p>© 2026 Crumbs of Love. All rights reserved.</p>
+        <div class="flex items-center space-x-6 uppercase tracking-wider text-2xs font-bold text-[#F5EDE3]/80">
+          <a href="https://instagram.com/crumbsoflove" target="_blank" class="hover:text-[#D98F4E] transition-colors">Instagram</a>
+          <span>•</span>
+          <a href="https://wa.me/917010987334" target="_blank" class="hover:text-[#D98F4E] transition-colors">WhatsApp</a>
+          <span>•</span>
+          <a href="shop.html" class="hover:text-[#D98F4E] transition-colors">Menu</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

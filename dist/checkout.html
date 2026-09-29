@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Crumbs of Love</title>
+  <meta name="description" content="Complete your order for fresh, healthier brownies. Direct delivery from our home bakery studio." />
+  <link rel="icon" type="image/jpeg" href="/assets/logo-Dd2usEVB.jpeg" />
+
+  <!-- Google Fonts: Bungee (Headings) + Instrument Sans / Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ovena: {
+              cream: '#F6EBDD',
+              card: '#FCFCFA',
+              soft: '#F6F1E9',
+              red: '#981C0A',
+              'red-dark': '#801708',
+              dark: '#2C201B',
+              muted: '#72665D',
+              border: '#E7DDD2',
+              footer: '#4A3327',
+              'footer-light': '#F5EDE3',
+              gold: '#D78A41',
+            },
+            cocoa: {
+              DEFAULT: '#2C201B',
+              deep: '#1A120E',
+              surface: '#382820',
+              light: '#4A352A',
+              muted: '#72665D',
+            },
+            brown: {
+              DEFAULT: '#4A3327',
+              rich: '#382419',
+              warm: '#5C3F2F',
+            },
+            caramel: {
+              DEFAULT: '#981C0A',
+              light: '#B22A16',
+              dark: '#801708',
+              glow: 'rgba(152, 28, 10, 0.25)',
+            },
+            cream: {
+              DEFAULT: '#F6EBDD',
+              soft: '#FCFCFA',
+              dark: '#E7DDD2',
+            },
+            'warm-white': '#FCFCFA',
+            gold: {
+              DEFAULT: '#D78A41',
+              light: '#E5A467',
+              dark: '#B56D28',
+              glow: 'rgba(215, 138, 65, 0.3)',
+            }
+          },
+          fontFamily: {
+            display: ['"Bungee"', '"Archivo Black"', 'sans-serif'],
+            serif: ['"Bungee"', '"Playfair Display"', 'serif'],
+            sans: ['"Instrument Sans"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          fontSize: {
+            '2xs': '0.65rem',
+            'fluid-hero': 'clamp(2.75rem, 8vw, 7.5rem)',
+            'fluid-h1': 'clamp(2.25rem, 5.5vw, 5rem)',
+            'fluid-h2': 'clamp(1.75rem, 4vw, 3.5rem)',
+            'fluid-h3': 'clamp(1.25rem, 2.5vw, 2.25rem)',
+          },
+          borderRadius: {
+            '3xl': '1.75rem',
+            '4xl': '2.25rem',
+            '5xl': '3rem',
+          },
+          boxShadow: {
+            'subtle': '0 4px 20px -2px rgba(30, 18, 12, 0.05)',
+            'elevated': '0 20px 40px -15px rgba(30, 18, 12, 0.12)',
+            '2xs': '0 1px 2px 0 rgba(30, 18, 12, 0.05)',
+          },
+          animation: {
+            'marquee': 'marquee 28s linear infinite',
+            'float-slow': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- External CDN Libraries (Optimized & Deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- CSS Stylesheets -->
+  <script type="module" crossorigin src="/assets/checkout-Cqt3zAlv.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-Bzb-fitW.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-olNI3jij.css">
+  <link rel="stylesheet" crossorigin href="/assets/output-C58MjfSm.css">
+</head>
+<body class="bg-cream text-cocoa antialiased selection:bg-caramel selection:text-warm-white relative overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Minimal Checkout Navbar -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-caramel/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-caramel/30 p-0.5 bg-cream-soft flex-shrink-0">
+          <img src="/assets/logo-Dd2usEVB.jpeg" alt="Crumbs of Love" class="w-full h-full object-cover rounded-full" />
+        </div>
+        <div class="leading-none min-w-0">
+          <span class="font-display text-sm sm:text-lg font-bold tracking-tight text-[#2C201B] uppercase block group-hover:text-[#981C0A] transition-colors truncate">
+            CRUMBS OF LOVE
+          </span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-[#D98F4E] font-medium block">
+            Secure Checkout
+          </span>
+        </div>
+      </a>
+
+      <div class="flex items-center space-x-2 sm:space-x-4 text-xs font-semibold text-cocoa-muted flex-shrink-0">
+        <span class="hidden md:inline">Need quick help?</span>
+        <a href="https://wa.me/917010987334" class="inline-flex items-center space-x-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-bold hover:bg-emerald-200 transition-colors text-2xs sm:text-xs">
+          <span class="hidden sm:inline">WhatsApp Support</span>
+          <span class="sm:hidden">Help</span>
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Container -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full">
+    <div id="checkout-page-container">
+      <!-- Injected via JavaScript from checkoutManager -->
+    </div>
+  </main>
+
+  <!-- Minimal Checkout Footer -->
+  <footer class="bg-cocoa-deep text-cream py-8 border-t border-caramel/20 select-none mt-16 text-center text-xs text-cream-dark/60">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p class="break-words">© 2026 Crumbs of Love.<br class="sm:hidden" /> Handcrafted fresh in small batches.</p>
+      <p class="text-[11px] text-cream-dark/40 break-words">Studio: Chennai, TN • WhatsApp: +91 70109 87334</p>
+    </div>
+  </footer>
+
+</body>
+</html>

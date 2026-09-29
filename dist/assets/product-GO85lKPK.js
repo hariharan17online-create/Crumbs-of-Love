@@ -1,0 +1,1 @@
+import"./main-Bzb-fitW.js";import{t as e}from"./products-CXsmNHtQ.js";e.initDetailPage();
