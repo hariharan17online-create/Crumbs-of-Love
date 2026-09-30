@@ -1,0 +1,323 @@
+/* ==========================================================================
+   CRUMBS OF LOVE — AWARD-LEVEL BRANDED PRELOADER
+   Hardware-accelerated, Apple-level polish, zero layout shifts.
+   ========================================================================== */
+
+:root {
+  --p: 0;
+  --cl-cream: #F5EBDC;
+  --cl-cream-rgb: 245, 235, 220;
+  --cl-cocoa: #2B1810;
+  --cl-brownie: #8A4322;
+  --cl-maroon: #9B1C0E;
+  --cl-maroon-rgb: 155, 28, 14;
+  --cl-glow: #E9A96B;
+  --cl-font-display: "Bungee", "Archivo Black", sans-serif;
+  --cl-font-sans: "Instrument Sans", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Scroll lock while loading */
+html.is-loading,
+html.is-loading body {
+  overflow: hidden !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+/* Master Fixed Loader Container (z-index 99999 sits above navbar & modals) */
+.cl-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+
+/* Curtains Lift Layers */
+.cl-curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Bottom SVG Wavy Edge overhang matching site's scalloped divider */
+.cl-curtain-wave {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: clamp(38px, 6vw, 68px);
+  margin-top: -1px; /* Prevents subpixel gaps */
+  line-height: 0;
+}
+
+.cl-curtain-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Maroon Curtain Layer (Behind cream, lifts second at delay 0.3s) */
+.cl-curtain-maroon {
+  background-color: var(--cl-maroon);
+  z-index: 1;
+  transition: transform 0.95s cubic-bezier(0.76, 0, 0.24, 1) 0.3s;
+}
+
+.cl-curtain-maroon .cl-curtain-wave svg {
+  fill: var(--cl-maroon);
+}
+
+/* Cream Curtain Layer (In front, lifts first at delay 0.12s) */
+.cl-curtain-cream {
+  background-color: var(--cl-cream);
+  z-index: 2;
+  transition: transform 0.95s cubic-bezier(0.76, 0, 0.24, 1) 0.12s;
+}
+
+.cl-curtain-cream .cl-curtain-wave svg {
+  fill: var(--cl-cream);
+}
+
+/* Exit Curtain Lift Trigger */
+.cl-exiting .cl-curtain-cream {
+  transform: translate3d(0, calc(-100% - clamp(38px, 6vw, 68px)), 0);
+}
+
+.cl-exiting .cl-curtain-maroon {
+  transform: translate3d(0, calc(-100% - clamp(38px, 6vw, 68px)), 0);
+}
+
+/* Stage Content */
+.cl-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 90vw;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.38s ease, transform 0.38s ease;
+  will-change: opacity, transform;
+}
+
+.cl-exiting .cl-content {
+  opacity: 0;
+  transform: translate3d(0, -18px, 0);
+}
+
+/* Center Logo + Ring + Glow Unit */
+.cl-mark,
+.cl-ring-container {
+  position: relative;
+  width: clamp(140px, 24vw, 176px);
+  height: clamp(140px, 24vw, 176px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(6px, 1.5vw, 12px);
+}
+
+.cl-mark::before{
+  content:"";position:absolute;inset:-14%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(233,169,107,.34),rgba(233,169,107,0) 100%);
+  opacity:calc(.1 + var(--p) * .9);
+  transform:scale(calc(.92 + var(--p) * .08));
+}
+
+/* SVG Progress Ring */
+.cl-ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Faint Guide Track Ring */
+.cl-ring-track {
+  stroke: rgba(155, 28, 14, 0.12);
+  stroke-width: 3px;
+  fill: none;
+}
+
+/* Active Progress Ring: starts at 12 o'clock via -90deg rotation */
+.cl-ring-progress {
+  stroke: var(--cl-maroon);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 590.62;
+  stroke-dashoffset: 590.62;
+  transform: rotate(-90deg);
+  transform-origin: 100px 100px;
+  transition: stroke-dashoffset 0.05s linear;
+  will-change: stroke-dashoffset;
+}
+
+/* Leading Edge Riding Dot */
+.cl-ring-dot {
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cl-dot-halo-outer {
+  fill: rgba(155, 28, 14, 0.22);
+}
+
+.cl-dot-halo-inner {
+  fill: rgba(155, 28, 14, 0.45);
+}
+
+.cl-dot-core {
+  fill: var(--cl-maroon);
+}
+
+/* Circular Logo with 4px White Border & Soft Brown Shadow */
+.cl-logo-wrap {
+  width: clamp(96px, 16vw, 116px);
+  height: clamp(96px, 16vw, 116px);
+  border-radius: 50%;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 10px 28px -4px rgba(43, 24, 16, 0.22);
+  background: #FCFCFA;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cl-breathe 3.2s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.cl-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gentle Breathing Animation (1 -> 1.035) */
+@keyframes cl-breathe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.035);
+  }
+}
+
+/* Wordmark Mask & Staggered Letters */
+.cl-wordmark-wrap {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(6px, 1.2vw, 10px);
+}
+
+.cl-word {
+  overflow: hidden;
+  display: inline-flex;
+  line-height: 1.1;
+}
+
+.cl-word-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.cl-letter {
+  display: inline-block;
+  font-family: var(--cl-font-display);
+  font-weight: 900;
+  font-size: clamp(20px, 3.8vw, 30px);
+  color: var(--cl-cocoa);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  transform: translate3d(0, 120%, 0);
+  animation: cl-letter-rise 0.65s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 45ms + 60ms);
+  will-change: transform;
+}
+
+@keyframes cl-letter-rise {
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Status Text: Sentence Case, Maroon, 16px */
+.cl-status {
+  font-family: var(--cl-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cl-maroon);
+  min-height: 24px;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  will-change: opacity, transform;
+}
+
+.cl-status.cl-fade {
+  opacity: 0;
+  transform: translate3d(0, -4px, 0);
+}
+
+/* Small Percentage: Tabular numerals, muted cocoa */
+.cl-percent {
+  font-family: var(--cl-font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--cl-cocoa);
+  opacity: 0.68;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+/* Reduced Motion Mode: Respect Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cl-logo-wrap {
+    animation: none !important;
+  }
+  .cl-letter {
+    animation: none !important;
+    transform: none !important;
+  }
+  .cl-glow {
+    transition: none !important;
+  }
+  .cl-curtain-cream,
+  .cl-curtain-maroon {
+    transition: opacity 0.35s ease !important;
+    transform: none !important;
+  }
+  .cl-curtain-wave {
+    display: none !important;
+  }
+  .cl-exiting .cl-curtain-cream,
+  .cl-exiting .cl-curtain-maroon {
+    transform: none !important;
+    opacity: 0 !important;
+  }
+  .cl-exiting .cl-content {
+    opacity: 0 !important;
+    transform: none !important;
+  }
+}

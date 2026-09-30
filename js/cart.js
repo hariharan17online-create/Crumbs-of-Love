@@ -243,7 +243,7 @@ class CartManager {
   openWhatsAppOrder(customerDetails = {}) {
     const msg = this.generateWhatsAppOrderMessage(customerDetails);
     if (!msg) {
-      this.showToast('Your cart is empty! Add brownies first.');
+      this.showToast('Your cart is empty! Add treats first.');
       return;
     }
     const url = `https://wa.me/${STORE_CONFIG.rawPhone}?text=${msg}`;

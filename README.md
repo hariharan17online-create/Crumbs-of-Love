@@ -112,15 +112,15 @@ export const STORE_CONFIG = {
 };
 ```
 
-### 2. Adding or Editing Brownies & Prices
+### 2. Adding or Editing Products & Prices
 In [`js/data.js`](file:///d:/Crumbs%20Of%20Love/js/data.js), look at the `PRODUCTS` array. Each product has customizable pack sizes, nutrition facts, and descriptions:
 ```javascript
 {
-  id: "classic-fudge",
-  name: "Signature Classic Fudge Brownie",
-  category: "Classic",              // "Classic" | "Nutty" | "Eggless" | "Guilt-Free" | "Gift Boxes"
-  badge: "Best Seller",
-  basePrice: 380,
+  id: "signature-brownie",
+  name: "Signature Brownie",
+  category: "Brownies",              // "Brownies" | "Cakes" | "Tres Leches" | "Specials"
+  badge: "House Special",
+  basePrice: 280,
   packSizes: [
     { size: "Box of 4", pieces: 4, price: 380, isPopular: false },
     { size: "Box of 6", pieces: 6, price: 540, isPopular: true, savings: "Save ₹30" },

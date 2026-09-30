@@ -107,82 +107,7 @@ export class AnimationEngine {
     }
   }
 
-  /* 2. Branded Preloader with Baking Progress Counter */
-  initPreloader(onCompleteCallback) {
-    const preloader = document.getElementById('crumbs-preloader');
-    if (!preloader) {
-      if (onCompleteCallback) onCompleteCallback();
-      return;
-    }
-
-    // Safety timeout: ensure preloader is removed after 1.8s max
-    const safetyTimer = setTimeout(() => {
-      if (preloader && preloader.style.display !== 'none') {
-        preloader.classList.add('fade-out');
-        setTimeout(() => { preloader.style.display = 'none'; }, 300);
-        if (onCompleteCallback) onCompleteCallback();
-      }
-    }, 1800);
-
-    if (this.prefersReducedMotion || !window.gsap) {
-      clearTimeout(safetyTimer);
-      preloader.style.display = 'none';
-      if (onCompleteCallback) onCompleteCallback();
-      return;
-    }
-
-    const counter = document.getElementById('preloader-counter');
-    const progressBar = document.getElementById('preloader-bar');
-    const ovenIcon = document.getElementById('preloader-oven-icon');
-    const logoMark = document.getElementById('preloader-logo');
-
-    const tl = gsap.timeline({
-      onComplete: () => {
-        gsap.to(preloader, {
-          yPercent: -100,
-          duration: 0.45,
-          ease: 'power3.inOut',
-          onComplete: () => {
-            preloader.style.display = 'none';
-            if (onCompleteCallback) onCompleteCallback();
-          }
-        });
-      }
-    });
-
-    // Animate counter from 0 to 100
-    const countObj = { val: 0 };
-    tl.to(countObj, {
-      val: 100,
-      duration: 0.75,
-      ease: 'power2.out',
-      onUpdate: () => {
-        const p = Math.round(countObj.val);
-        if (counter) counter.textContent = `${p}%`;
-        if (progressBar) progressBar.style.width = `${p}%`;
-      }
-    }, 0);
-
-    if (logoMark) {
-      tl.fromTo(logoMark, 
-        { scale: 0.85, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 1.1, ease: 'back.out(1.5)' }, 
-        0.1
-      );
-    }
-
-    if (ovenIcon) {
-      tl.to(ovenIcon, {
-        scale: 1.1,
-        yoyo: true,
-        repeat: 2,
-        duration: 0.4,
-        ease: 'sine.inOut'
-      }, 0.2);
-    }
-  }
-
-  /* 3. GPU-Accelerated Custom Cursor (Desktop Only, rAF-Throttled, Zero DOM Writes in Event Handler) */
+  /* 2. GPU-Accelerated Custom Cursor (Desktop Only, rAF-Throttled, Zero DOM Writes in Event Handler) */
   initCustomCursor() {
     if (typeof window === 'undefined') return;
 
@@ -336,34 +261,44 @@ export class AnimationEngine {
 
     const heroTl = gsap.timeline({ delay: 0.1 });
 
-    heroTl.fromTo('.hero-badge', 
-      { y: 25, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-    );
+    if (document.querySelector('.hero-badge')) {
+      heroTl.fromTo('.hero-badge', 
+        { y: 25, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+      );
+    }
 
-    heroTl.fromTo('.hero-title-line', 
-      { y: 60, opacity: 0, rotateZ: 1 }, 
-      { y: 0, opacity: 1, rotateZ: 0, stagger: 0.14, duration: 1.1, ease: 'power4.out' }, 
-      "-=0.5"
-    );
+    if (document.querySelector('.hero-title-line')) {
+      heroTl.fromTo('.hero-title-line', 
+        { y: 60, opacity: 0, rotateZ: 1 }, 
+        { y: 0, opacity: 1, rotateZ: 0, stagger: 0.14, duration: 1.1, ease: 'power4.out' }, 
+        "-=0.5"
+      );
+    }
 
-    heroTl.fromTo('.hero-subtitle', 
-      { y: 30, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }, 
-      "-=0.6"
-    );
+    if (document.querySelector('.hero-subtitle')) {
+      heroTl.fromTo('.hero-subtitle', 
+        { y: 30, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }, 
+        "-=0.6"
+      );
+    }
 
-    heroTl.fromTo('.hero-cta-wrap', 
-      { y: 25, opacity: 0, scale: 0.96 }, 
-      { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.4)' }, 
-      "-=0.5"
-    );
+    if (document.querySelector('.hero-cta-wrap')) {
+      heroTl.fromTo('.hero-cta-wrap', 
+        { y: 25, opacity: 0, scale: 0.96 }, 
+        { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.4)' }, 
+        "-=0.5"
+      );
+    }
 
-    heroTl.fromTo('.hero-social-proof', 
-      { opacity: 0, y: 15 }, 
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 
-      "-=0.4"
-    );
+    if (document.querySelector('.hero-social-proof')) {
+      heroTl.fromTo('.hero-social-proof', 
+        { opacity: 0, y: 15 }, 
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 
+        "-=0.4"
+      );
+    }
   }
 
   /* 5. ScrollTrigger Animations: Reveals, Parallax & Storytelling Scoped with gsap.context() */

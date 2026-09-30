@@ -20,7 +20,7 @@ export class ProductEngine {
   createCardHTML(product) {
     const isWish = cartManager.isWishlisted(product.id);
     const minPrice = product.basePrice || product.packSizes[0].price;
-    const categoryIconName = product.category === 'Nutty' ? 'cookie' : product.category === 'Guilt-Free' ? 'leaf' : 'award';
+    const categoryIconName = product.category === 'Brownies' ? 'cookie' : product.category === 'Cakes' ? 'cake' : product.category === 'Tres Leches' ? 'heart' : 'sparkles';
 
     return `
       <div class="product-card bg-[#FCFCFA] rounded-3xl pt-16 pb-6 px-6 border border-[#E7DDD2] shadow-sm hover:shadow-lg transition-all duration-300 relative flex flex-col justify-between items-center text-center group mt-12" data-product-id="${product.id}" data-category="${product.category}">
@@ -173,7 +173,7 @@ export class ProductEngine {
           <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-cream-soft flex items-center justify-center text-caramel">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <h3 class="font-serif text-2xl font-bold text-cocoa mb-1">No brownies found</h3>
+          <h3 class="font-serif text-2xl font-bold text-cocoa mb-1">No treats found</h3>
           <p class="text-sm text-cocoa-muted mb-4">Try clearing your search terms or picking another category.</p>
           <button onclick="document.getElementById('shop-search-input').value=''; window.productEngine.currentCategory='All'; window.productEngine.renderShopGrid();" class="px-5 py-2.5 rounded-full bg-cocoa text-warm-white text-xs font-semibold">
             Reset Filters
@@ -201,9 +201,9 @@ export class ProductEngine {
     const pdpContainer = document.getElementById('product-detail-container');
     if (!pdpContainer) return;
 
-    // Get product ID from query parameter: ?id=classic-fudge
+    // Get product ID from query parameter: ?id=signature-brownie
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id') || 'classic-fudge';
+    const productId = urlParams.get('id') || 'signature-brownie';
     const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0];
 
     // State for PDP

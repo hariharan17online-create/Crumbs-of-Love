@@ -32,28 +32,28 @@ export const STORE_CONFIG = {
 
 export const PRODUCTS = [
   {
-    id: "classic-fudge",
-    slug: "signature-classic-fudge",
-    name: "Signature Classic Fudge Brownie",
-    category: "Classic",
-    badge: "Best Seller",
-    tagline: "Dense, molten center with paper-thin crackly top",
-    rating: 4.9,
-    reviewCount: 142,
-    basePrice: 380, // Box of 4
+    id: "signature-brownie",
+    slug: "signature-brownie",
+    name: "Signature Brownie",
+    category: "Brownies",
+    badge: "House Special",
+    tagline: "Our classic fudgy house-special brownie",
+    rating: 4.95,
+    reviewCount: 168,
+    basePrice: 280, // Box of 4
     packSizes: [
-      { size: "Box of 4", pieces: 4, price: 380, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 540, isPopular: true, savings: "Save ₹30" },
-      { size: "Box of 12", pieces: 12, price: 980, isPopular: false, savings: "Save ₹160" }
+      { size: "Box of 4", pieces: 4, price: 280, isPopular: false },
+      { size: "Box of 6", pieces: 6, price: 410, isPopular: true, savings: "Save ₹10" },
+      { size: "Box of 12", pieces: 12, price: 790, isPopular: false, savings: "Save ₹50" }
     ],
+    /* TODO: replace with real Signature Brownie photo */
     image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1589218436045-ee320057f443?auto=format&fit=crop&w=900&q=80"
     ],
-    shortDesc: "Our gold standard. Made with 70% single-origin dark cocoa, real dairy butter, and unrefined organic cane sugar.",
-    fullDesc: "The brownie that started it all. We slow-melt pure single-origin dark chocolate and fold it with cold-churned fresh dairy butter and raw jaggery crystals. Baked slowly at low temperatures to produce an intensely gooey, velvety center with that coveted glossy, tissue-thin crackly meringue top. Indulgent, yet 40% lighter in refined sugars than commercial brownies.",
+    shortDesc: "Our classic fudgy house-special brownie made with 70% dark cocoa, pure dairy butter, and raw cane sugar.",
+    fullDesc: "The timeless house-special that defines Crumbs of Love. Baked slow at low heat to develop a rich, dense molten center enveloped by a paper-thin glossy crackle crust. Hand-stirred using single-origin dark cocoa, churned dairy butter, and unrefined raw cane sugar for wholesome indulgence.",
     healthyHighlights: [
       "No refined white sugar (Organic Raw Cane & Jaggery)",
       "70% Single-Origin West African Cocoa",
@@ -64,7 +64,7 @@ export const PRODUCTS = [
       "70% Dark Couverture Chocolate",
       "Organic Jaggery & Raw Demerara Cane",
       "Fresh Country Butter",
-      "Farm-Fresh Free-Range Eggs (or Eggless Curd Culture)",
+      "Farm-Fresh Free-Range Eggs",
       "Unbleached Stoneground Wheat",
       "Pure Madagascar Vanilla Bean",
       "Himalayan Pink Rock Salt"
@@ -81,283 +81,93 @@ export const PRODUCTS = [
     isFeatured: true
   },
   {
-    id: "walnut-crunch",
-    slug: "roasted-walnut-crunch",
-    name: "Roasted Kashmiri Walnut Crunch",
-    category: "Nutty",
-    badge: "Customer Favorite",
-    tagline: "Gooey chocolate loaded with slow-roasted buttery walnuts",
-    rating: 4.95,
-    reviewCount: 98,
-    basePrice: 420,
+    id: "almond-brownie",
+    slug: "almond-brownie",
+    name: "Almond Brownie",
+    category: "Brownies",
+    badge: "Nutty Crunch",
+    tagline: "Fudgy brownie topped and mixed with roasted almonds",
+    rating: 4.9,
+    reviewCount: 114,
+    basePrice: 320,
     packSizes: [
-      { size: "Box of 4", pieces: 4, price: 420, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 590, isPopular: true, savings: "Save ₹40" },
-      { size: "Box of 12", pieces: 12, price: 1090, isPopular: false, savings: "Save ₹170" }
+      { size: "Box of 4", pieces: 4, price: 320, isPopular: false },
+      { size: "Box of 6", pieces: 6, price: 460, isPopular: true, savings: "Save ₹20" },
+      { size: "Box of 12", pieces: 12, price: 890, isPopular: false, savings: "Save ₹70" }
     ],
-    image: "https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=900&q=80",
+    image: "/assets/menu/almond-brownie.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
+      "/assets/menu/almond-brownie.jpg"
     ],
-    shortDesc: "Golden slow-roasted Kashmiri walnuts folded into dense, bittersweet fudge chocolate.",
-    fullDesc: "We take handpicked mountain walnuts from Kashmir, slow-toast them in small batches until they release their fragrant essential oils, and fold generous handfuls into our signature rich dark chocolate batter. Every bite has that exquisite contrast: deeply gooey chocolate melting into buttery, crisp nutty crunch.",
+    shortDesc: "Fudgy dark chocolate brownie generously topped and folded with slow-roasted, crunchy California almonds.",
+    fullDesc: "Slow-roasted California almonds toasted until fragrant, folded generously into our rich dark cocoa batter and topped with whole sliced almonds for the ultimate satisfying crunch in every velvety bite.",
     healthyHighlights: [
-      "Rich in Omega-3 brain fats from slow-roasted walnuts",
-      "Sweetened with unrefined raw jaggery",
-      "Antioxidant-rich dark cocoa",
-      "No chemical preservatives or artificial aromas"
+      "Generously packed with slow-roasted premium almonds",
+      "Rich in natural Vitamin E and healthy monounsaturated fats",
+      "Sweetened with mineral-rich raw cane sugar",
+      "Zero artificial preservatives or trans fats"
     ],
     ingredients: [
-      "Slow-Roasted Kashmiri Walnuts",
-      "Single-Origin 70% Dark Chocolate",
-      "Cold-Churned Butter",
-      "Organic Jaggery Powder",
-      "Stoneground Wheat",
-      "Himalayan Pink Salt"
+      "Slow-Roasted California Almonds",
+      "70% Dark Couverture Chocolate",
+      "Cold-Churned Farm Butter",
+      "Organic Raw Cane Sugar",
+      "Stoneground Wheat Flour",
+      "Farm Fresh Eggs",
+      "Madagascar Vanilla"
     ],
     nutrition: {
       servingSize: "1 Brownie Square (80g)",
       calories: "235 kcal",
-      protein: "5.5g",
+      protein: "6.2g",
       carbs: "20g",
       healthyFats: "15g",
       refinedSugar: "0g"
     },
-    allergens: "Contains Tree Nuts (Walnuts), Dairy, and Wheat.",
+    allergens: "Contains Tree Nuts (Almonds), Dairy, and Wheat.",
     isFeatured: true
   },
   {
-    id: "dark-sea-salt",
-    slug: "85-percent-dark-chocolate-sea-salt",
-    name: "85% Noir & Guerande Sea Salt",
-    category: "Classic",
-    badge: "Chef's Signature",
-    tagline: "Intense bittersweet noir with delicate flaky salt crystals",
-    rating: 4.88,
-    reviewCount: 76,
-    basePrice: 440,
-    packSizes: [
-      { size: "Box of 4", pieces: 4, price: 440, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 620, isPopular: true, savings: "Save ₹40" },
-      { size: "Box of 12", pieces: 12, price: 1150, isPopular: false, savings: "Save ₹170" }
-    ],
-    image: "https://images.unsplash.com/photo-1589218436045-ee320057f443?auto=format&fit=crop&w=900&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1589218436045-ee320057f443?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
-    ],
-    shortDesc: "For true dark chocolate lovers. 85% single-estate cocoa finished with delicate mineral-rich sea salt flakes.",
-    fullDesc: "Created for connoisseurs who appreciate true chocolate depth without overwhelming sweetness. We use intense 85% dark cacao paired with a sprinkle of artisanal flaky sea salt on the crust. The salt crystals accentuate the floral, fruity cacao notes while cutting cleanly through the decadent fudginess.",
-    healthyHighlights: [
-      "Super high in cocoa flavanols & polyphenols",
-      "Very low sugar profile (less than 6g total carbs from sugar per square)",
-      "Electrolyte-rich French fleur de sel",
-      "Pure clean indulgence"
-    ],
-    ingredients: [
-      "85% Single-Estate Dark Chocolate",
-      "Artisanal Sea Salt Flakes",
-      "Pure Country Butter",
-      "Raw Coconut Sugar",
-      "Stoneground Wheat",
-      "Bourbon Vanilla"
-    ],
-    nutrition: {
-      servingSize: "1 Brownie Square (75g)",
-      calories: "205 kcal",
-      protein: "4.9g",
-      carbs: "17g",
-      healthyFats: "13.5g",
-      refinedSugar: "0g"
-    },
-    allergens: "Contains Dairy and Wheat.",
-    isFeatured: true
-  },
-  {
-    id: "date-oat-flour",
-    slug: "medjool-date-rolled-oat-brownie",
-    name: "Medjool Date & Rolled Oat (Guilt-Free)",
-    category: "Guilt-Free",
-    badge: "100% Sugar-Free",
-    tagline: "Naturally sweetened with whole dates and oat flour",
+    id: "double-chocolate-brownie",
+    slug: "double-chocolate-brownie",
+    name: "Double Chocolate Brownie",
+    category: "Brownies",
+    badge: "Intense Cocoa",
+    tagline: "Extra cocoa with chocolate chunks baked right in",
     rating: 4.92,
-    reviewCount: 114,
-    basePrice: 450,
+    reviewCount: 96,
+    basePrice: 310,
     packSizes: [
-      { size: "Box of 4", pieces: 4, price: 450, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 640, isPopular: true, savings: "Save ₹35" },
-      { size: "Box of 12", pieces: 12, price: 1190, isPopular: false, savings: "Save ₹160" }
+      { size: "Box of 4", pieces: 4, price: 310, isPopular: false },
+      { size: "Box of 6", pieces: 6, price: 450, isPopular: true, savings: "Save ₹15" },
+      { size: "Box of 12", pieces: 12, price: 870, isPopular: false, savings: "Save ₹60" }
     ],
-    image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=900&q=80",
+    image: "/assets/menu/double-choco-brownie.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
+      "/assets/menu/double-choco-brownie.jpg"
     ],
-    shortDesc: "Zero added sugar or flour! Naturally sweetened with premium Medjool dates and fiber-rich rolled oats.",
-    fullDesc: "Our answer to wholesome craving. We purée soft, caramel-like Medjool dates and blend them with fine-milled Scottish rolled oats, pure Dutch cocoa, and cold-pressed organic coconut oil. It delivers all the dense, comforting pleasure of a classic brownie while packing 6g of dietary fiber and zero refined sugar spikes.",
+    shortDesc: "Deep dark chocolate batter loaded with melted chocolate chunks baked inside for double the richness.",
+    fullDesc: "For the uncompromising chocoholic. We double down on 75% dark chocolate couverture and fold in generous hand-cut chocolate chunks that melt into gooey pockets when warmed.",
     healthyHighlights: [
-      "0g Added Sugars (100% Date Sweetened)",
-      "Gluten-conscious rolled oats (no refined wheat flour)",
-      "High fiber & steady glycemic release",
-      "Dairy-free / Plant-powered recipe"
+      "Double dose of high-antioxidant cocoa solids",
+      "Hand-chopped couverture chunks without paraffin wax",
+      "Low GI organic jaggery and brown sugar blend",
+      "Freshly baked in micro-batches daily"
     ],
     ingredients: [
-      "Medjool Date Purée",
-      "Whole Rolled Oat Flour",
-      "Dutch Cacao Powder",
-      "Cold-Pressed Virgin Coconut Oil",
-      "Ground Flaxseed & Chia Gel",
-      "Madagascar Vanilla",
-      "Himalayan Salt"
+      "Double West African Dark Chocolate Couverture",
+      "Single-Origin Cocoa Mass",
+      "Fresh Churned Country Butter",
+      "Unrefined Raw Cane",
+      "Whole Wheat Flour",
+      "Eggs",
+      "Sea Salt"
     ],
     nutrition: {
       servingSize: "1 Brownie Square (80g)",
-      calories: "175 kcal",
-      protein: "4.5g",
-      fiber: "5.8g",
-      carbs: "24g",
-      healthyFats: "7.5g",
-      refinedSugar: "0g (Zero Added Sugar)"
-    },
-    allergens: "Gluten-free ingredients used. Prepared in a facility handling dairy.",
-    isFeatured: true
-  },
-  {
-    id: "eggless-fudge",
-    slug: "pure-eggless-silk-fudge",
-    name: "Pure Eggless Silk Fudge Brownie",
-    category: "Eggless",
-    badge: "100% Eggless",
-    tagline: "Velvety melt-in-mouth texture using artisanal yogurt culture",
-    rating: 4.96,
-    reviewCount: 165,
-    basePrice: 390,
-    packSizes: [
-      { size: "Box of 4", pieces: 4, price: 390, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 560, isPopular: true, savings: "Save ₹25" },
-      { size: "Box of 12", pieces: 12, price: 1020, isPopular: false, savings: "Save ₹150" }
-    ],
-    image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=900&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
-    ],
-    shortDesc: "100% vegetarian without compromising on that decadent, glossy crackly brownie crust.",
-    fullDesc: "Baking an authentic fudgy brownie without eggs is an art form. We mastered this using a blend of artisanal hung yogurt, cold-pressed dairy cream, and pure cocoa butter. The result is exceptionally moist, intensely chocolaty, and completely egg-free.",
-    healthyHighlights: [
-      "Strictly 100% Eggless / Vegetarian",
-      "Light unrefined jaggery & demerara sugar",
-      "No chemical cake gels or emulsifiers",
-      "Baked fresh in small batches"
-    ],
-    ingredients: [
-      "70% Dark Couverture Chocolate",
-      "Artisanal Hung Yogurt Culture",
-      "Fresh Country Butter",
-      "Unrefined Raw Cane Sugar",
-      "Stoneground Wheat Flour",
-      "Natural Vanilla Extract"
-    ],
-    nutrition: {
-      servingSize: "1 Brownie Square (75g)",
-      calories: "215 kcal",
-      protein: "4.4g",
+      calories: "230 kcal",
+      protein: "5.1g",
       carbs: "23g",
-      healthyFats: "12g",
-      refinedSugar: "0g"
-    },
-    allergens: "Contains Dairy and Wheat. 100% Egg-Free.",
-    isFeatured: true
-  },
-  {
-    id: "hazelnut-praline",
-    slug: "roasted-hazelnut-praline",
-    name: "Toasted Hazelnut & Gianduja Praline",
-    category: "Nutty",
-    badge: "Indulgent",
-    tagline: "Whole roasted Piedmont hazelnuts with house-ground praline swirl",
-    rating: 4.94,
-    reviewCount: 82,
-    basePrice: 460,
-    packSizes: [
-      { size: "Box of 4", pieces: 4, price: 460, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 660, isPopular: true, savings: "Save ₹30" },
-      { size: "Box of 12", pieces: 12, price: 1220, isPopular: false, savings: "Save ₹160" }
-    ],
-    image: "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=900&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=900&q=80"
-    ],
-    shortDesc: "Decadent whole Turkish hazelnuts folded into cocoa batter with golden hazelnut praline swirl.",
-    fullDesc: "We take whole aromatic hazelnuts, slow-roast them until deep golden brown, and grind half into a silky praline paste while leaving the rest whole for dramatic crunch. Swirled into our dark chocolate batter for an unforgettable Nutella-reminiscent profile without hydrogenated oils.",
-    healthyHighlights: [
-      "Loaded with vitamin E and heart-healthy fats",
-      "No palm oil (unlike commercial hazelnut spreads)",
-      "Unrefined raw jaggery sweetening",
-      "Fresh small-batch roasted nuts"
-    ],
-    ingredients: [
-      "Slow-Roasted Whole Hazelnuts",
-      "House-Made Hazelnut Praline",
-      "70% Dark Chocolate",
-      "Cold-Churned Butter",
-      "Raw Cane Sugar",
-      "Stoneground Flour"
-    ],
-    nutrition: {
-      servingSize: "1 Brownie Square (80g)",
-      calories: "245 kcal",
-      protein: "5.8g",
-      carbs: "19g",
-      healthyFats: "16.5g",
-      refinedSugar: "0g"
-    },
-    allergens: "Contains Tree Nuts (Hazelnuts), Dairy, and Wheat.",
-    isFeatured: false
-  },
-  {
-    id: "salted-caramel-swirl",
-    slug: "artisanal-salted-caramel-swirl",
-    name: "Gooey Salted Caramel Ribbon Brownie",
-    category: "Classic",
-    badge: "Staff Pick",
-    tagline: "Slow-simmered jaggery butter caramel laced through deep fudge",
-    rating: 4.91,
-    reviewCount: 91,
-    basePrice: 430,
-    packSizes: [
-      { size: "Box of 4", pieces: 4, price: 430, isPopular: false },
-      { size: "Box of 6", pieces: 6, price: 610, isPopular: true, savings: "Save ₹35" },
-      { size: "Box of 12", pieces: 12, price: 1140, isPopular: false, savings: "Save ₹150" }
-    ],
-    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
-    ],
-    shortDesc: "House-made sea salt jaggery caramel ribboned throughout our bittersweet dark chocolate fudge.",
-    fullDesc: "We slowly cook raw coconut cream and organic jaggery with sea salt until thick, glossy and deeply caramelized. This amber ribbon is marbled by hand through the chocolate batter before baking so it retains pockets of luscious, flowing molten caramel inside every slice.",
-    healthyHighlights: [
-      "Caramel made with real coconut milk and jaggery",
-      "No corn syrups or synthetic glucose liquids",
-      "Pure unrefined minerals",
-      "Hand-marbled in small batches"
-    ],
-    ingredients: [
-      "House Salted Jaggery Caramel",
-      "70% Dark Chocolate",
-      "Country Butter",
-      "Coconut Cream",
-      "Unrefined Cane Sugar",
-      "Flaky Sea Salt"
-    ],
-    nutrition: {
-      servingSize: "1 Brownie Square (80g)",
-      calories: "228 kcal",
-      protein: "4.1g",
-      carbs: "24g",
       healthyFats: "13g",
       refinedSugar: "0g"
     },
@@ -365,79 +175,371 @@ export const PRODUCTS = [
     isFeatured: false
   },
   {
-    id: "gift-box-tasting",
-    slug: "tasting-collection-gift-box-6",
-    name: "The Connoisseur Gift Box (6 Assorted)",
-    category: "Gift Boxes",
-    badge: "Luxury Gift",
-    tagline: "Curated 6-flavor discovery box wrapped with gold ribbon & handwritten card",
-    rating: 4.98,
-    reviewCount: 210,
-    basePrice: 650,
+    id: "triple-chocolate-brownie",
+    slug: "triple-chocolate-brownie",
+    name: "Triple Chocolate Brownie",
+    category: "Brownies",
+    badge: "Decadent Swirl",
+    tagline: "Dark, milk, and white chocolate layered and swirled",
+    rating: 4.96,
+    reviewCount: 132,
+    basePrice: 330,
     packSizes: [
-      { size: "Box of 6 (Assorted)", pieces: 6, price: 650, isPopular: true, savings: "Includes Gift Wrap" },
-      { size: "Box of 12 (Double Treats)", pieces: 12, price: 1250, isPopular: false, savings: "Save ₹150 + Free Gift Box" }
+      { size: "Box of 4", pieces: 4, price: 330, isPopular: false },
+      { size: "Box of 6", pieces: 6, price: 480, isPopular: true, savings: "Save ₹15" },
+      { size: "Box of 12", pieces: 12, price: 920, isPopular: false, savings: "Save ₹70" }
     ],
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80",
+    image: "/assets/menu/triple-choco-brownie.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"
+      "/assets/menu/triple-choco-brownie.jpg"
     ],
-    shortDesc: "The ultimate gifting experience. Six signature brownies in an embossed cocoa keepsake box with personalized note.",
-    fullDesc: "Crafted for birthdays, anniversaries, corporate gifts, and heartfelt celebrations. Each keepsake gift box includes 1x Classic Fudge, 1x Walnut Crunch, 1x 85% Sea Salt, 1x Salted Caramel, 1x Hazelnut Praline, and 1x Date & Oat Guilt-Free. Tied with a silk chocolate ribbon and your custom printed love note.",
+    shortDesc: "Harmonious layers of dark, milk, and white chocolate swirled for a rich multi-dimensional taste.",
+    fullDesc: "A tri-flavor symphony. Deep dark cocoa fudge base layered with creamy milk chocolate drops and swirled with velvety white chocolate for a showstopping contrast of flavor notes.",
     healthyHighlights: [
-      "6 distinctive artisanal recipes in one box",
-      "Custom gift note on heavy textured stock",
-      "Recyclable luxury packaging with gold foil seal",
-      "Freshly baked and dispatched same day"
+      "Triple cocoa profile with real cocoa butter",
+      "No palm oil or confectionery compound fats",
+      "Balanced natural sweetness with raw demerara",
+      "Artisan-crafted swirled pattern on every square"
     ],
     ingredients: [
-      "Assorted single-origin chocolates",
-      "Selected dry fruits (walnuts, hazelnuts)",
-      "Organic jaggery, raw cane and Medjool dates",
-      "Pure country butter and dairy cream"
+      "Dark Cocoa Couverture (70%)",
+      "Whole Milk Chocolate",
+      "Pure Cocoa Butter White Chocolate",
+      "Farm Butter",
+      "Raw Demerara Cane",
+      "Wheat Flour",
+      "Vanilla Bean"
     ],
     nutrition: {
-      servingSize: "Varies by flavor",
-      calories: "210-245 kcal avg",
-      refinedSugar: "0g across all varieties"
+      servingSize: "1 Brownie Square (80g)",
+      calories: "240 kcal",
+      protein: "4.9g",
+      carbs: "24g",
+      healthyFats: "14g",
+      refinedSugar: "0g"
     },
-    allergens: "Contains Dairy, Wheat, and Tree Nuts. Can be customized Eggless upon request.",
+    allergens: "Contains Dairy and Wheat.",
+    isFeatured: false
+  },
+  {
+    id: "dream-cake",
+    slug: "dream-cake",
+    name: "Dream Cake",
+    category: "Cakes",
+    badge: "Celebration Special",
+    tagline: "Soft layered celebration-style cake with rich ganache",
+    rating: 4.98,
+    reviewCount: 184,
+    basePrice: 450,
+    packSizes: [
+      { size: "Petite Tin (500g)", pieces: 1, price: 450, isPopular: true },
+      { size: "Grand Tin (1kg)", pieces: 1, price: 850, isPopular: false, savings: "Save ₹50" }
+    ],
+    image: "/assets/menu/dream-cake.jpg",
+    gallery: [
+      "/assets/menu/dream-cake.jpg"
+    ],
+    shortDesc: "Soft multi-layer celebration cake featuring tender chocolate sponge, rich mousse, and crackly chocolate shell.",
+    fullDesc: "Our viral 5-in-1 celebration Dream Cake. Layers of moist sponge cake, silky milk chocolate cream, rich dark ganache, and a thin crackling Belgian chocolate top layer that snaps under your spoon.",
+    healthyHighlights: [
+      "5 luxurious artisanal layers in an airtight reusable keepsake tin",
+      "Made with fresh heavy dairy cream and pure Belgian chocolate",
+      "Zero artificial stabilizers, gels, or food coloring",
+      "Perfect centerpiece for birthdays, anniversaries, and parties"
+    ],
+    ingredients: [
+      "Belgian Chocolate Ganache",
+      "Fresh Dairy Cream Mousse",
+      "Cocoa Sponge Cake",
+      "Cold-Churned Butter",
+      "Organic Cane Sugar",
+      "Eggs",
+      "Cocoa Powder Dusting"
+    ],
+    nutrition: {
+      servingSize: "1 Portion (100g)",
+      calories: "280 kcal",
+      protein: "5.5g",
+      carbs: "29g",
+      healthyFats: "16g",
+      refinedSugar: "0g"
+    },
+    allergens: "Contains Dairy, Eggs, and Wheat.",
     isFeatured: true
   },
   {
-    id: "grand-celebration-box",
-    slug: "grand-celebration-hamper-12",
-    name: "The Grand Celebration Hamper (12 Pieces)",
-    category: "Gift Boxes",
-    badge: "Celebration",
-    tagline: "Full assortment with specialty wooden keepsake box & greeting candle",
-    rating: 5.0,
-    reviewCount: 88,
-    basePrice: 1390,
+    id: "rose-milk-tres-leches",
+    slug: "rose-milk-tres-leches",
+    name: "Rose Milk Tres Leches",
+    category: "Tres Leches",
+    badge: "Nostalgic Flavor",
+    tagline: "Tres leches sponge soaked in rose-flavored milk",
+    rating: 4.94,
+    reviewCount: 147,
+    basePrice: 260,
     packSizes: [
-      { size: "Grand Box of 12", pieces: 12, price: 1390, isPopular: true, savings: "Complimentary Express Delivery" }
+      { size: "Single Tub (300g)", pieces: 1, price: 260, isPopular: true },
+      { size: "Party Tub (600g)", pieces: 1, price: 490, isPopular: false, savings: "Save ₹30" }
     ],
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    image: "/assets/menu/rose-milk-tres-leches.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80"
+      "/assets/menu/rose-milk-tres-leches.jpg"
     ],
-    shortDesc: "Our grandest showcase. 12 fresh bakery-warm brownies packed in a premium reusable textured magnetic gift trunk.",
-    fullDesc: "A statement gift that turns any ordinary day into a feast. Contains pairs of our best-selling brownie creations individually wrapped to preserve that warm bakery freshness. Perfect for festive gifting, corporate appreciation, or family gatherings.",
+    shortDesc: "Pillowy sponge cake soaked in fragrant Chennai rose-infused three milks, crowned with fresh whipped cream.",
+    fullDesc: "A South Indian love letter to the Latin classic. Feathery-light sponge soaked in chilled milk infused with natural Damascus rose extracts and cardamom, finished with cloud-soft whipped cream and dried edible rose petals.",
     healthyHighlights: [
-      "All 6 signature recipes included",
-      "Individually wrapped to preserve peak moisture",
-      "Includes handmade scented soy candle and custom wax-sealed note",
-      "Free priority delivery"
+      "Naturally infused with pure floral Damascus rose petal essence",
+      "Soaked in three wholesome fresh farm milks",
+      "Light, airy texture with lower sweetness profile",
+      "Freshly prepared and chilled for peak refreshment"
     ],
     ingredients: [
-      "Full spectrum artisanal ingredients: Single-origin cacaos, churned cream, roasted mountain nuts, raw jaggery"
+      "Pure Farm Whole Milk & Condensed Dairy",
+      "Natural Damascus Rose Petal Extract",
+      "Cardamom Pods",
+      "Whipped Fresh Cream",
+      "Chiffon Sponge Flour",
+      "Free-Range Eggs",
+      "Raw Sugar"
     ],
     nutrition: {
-      servingSize: "12 distinct brownies"
+      servingSize: "1 Tub (150g)",
+      calories: "215 kcal",
+      protein: "6.0g",
+      carbs: "26g",
+      healthyFats: "10g",
+      refinedSugar: "0g"
     },
-    allergens: "Contains Dairy, Wheat, and Nuts.",
+    allergens: "Contains Dairy and Eggs.",
+    isFeatured: true
+  },
+  {
+    id: "paan-tres-leches",
+    slug: "paan-tres-leches",
+    name: "Paan Tres Leches",
+    category: "Tres Leches",
+    badge: "Artisanal Fusion",
+    tagline: "Tres leches sponge soaked in paan betel-leaf flavored milk",
+    rating: 4.91,
+    reviewCount: 89,
+    basePrice: 270,
+    packSizes: [
+      { size: "Single Tub (300g)", pieces: 1, price: 270, isPopular: true },
+      { size: "Party Tub (600g)", pieces: 1, price: 510, isPopular: false, savings: "Save ₹30" }
+    ],
+    image: "/assets/menu/paan-tres-leches.jpg",
+    gallery: [
+      "/assets/menu/paan-tres-leches.jpg"
+    ],
+    shortDesc: "Airy sponge soaked in sweet betel-leaf paan milk infused with aromatic gulkand and fennel.",
+    fullDesc: "An inventive post-dinner fusion dessert. Our delicate chiffon sponge is soaked in chilled milk steeped with fresh Maghai betel leaves, aromatic rose petal gulkand, and slivered pistachios for a soothing, floral finish.",
+    healthyHighlights: [
+      "Freshly steeped Maghai paan leaves and traditional gulkand",
+      "Soothing digestive botanicals: fennel and green cardamom",
+      "No artificial food colorings or synthetic essences",
+      "Handcrafted dairy soak served ice-cold"
+    ],
+    ingredients: [
+      "Fresh Betel (Paan) Leaf Steep",
+      "Artisanal Rose Gulkand",
+      "Three Milks Blend",
+      "Green Cardamom & Fennel",
+      "Pistachio Slivers",
+      "Chiffon Sponge",
+      "Whipped Cream"
+    ],
+    nutrition: {
+      servingSize: "1 Tub (150g)",
+      calories: "220 kcal",
+      protein: "5.8g",
+      carbs: "27g",
+      healthyFats: "10g",
+      refinedSugar: "0g"
+    },
+    allergens: "Contains Dairy, Eggs, and Tree Nuts (Pistachios).",
+    isFeatured: false
+  },
+  {
+    id: "tiramisu",
+    slug: "tiramisu",
+    name: "Tiramisu",
+    category: "Specials",
+    badge: "Italian Classic",
+    tagline: "Classic coffee-mascarpone layered dessert",
+    rating: 4.97,
+    reviewCount: 160,
+    basePrice: 320,
+    packSizes: [
+      { size: "Single Jar (250g)", pieces: 1, price: 320, isPopular: true },
+      { size: "Sharing Box (500g)", pieces: 1, price: 590, isPopular: false, savings: "Save ₹50" }
+    ],
+    image: "/assets/menu/tiramisu.jpg",
+    gallery: [
+      "/assets/menu/tiramisu.jpg"
+    ],
+    shortDesc: "Classic Italian dessert made with fresh espresso-soaked ladyfingers, velvety mascarpone cream, and dark cocoa.",
+    fullDesc: "Authentic, airy, and deeply caffeinated. Freshly brewed South Indian filter coffee & espresso soak artisanal sponge biscuits layered with light sweetened mascarpone zabaglione, dusted generously with 100% bitter cocoa powder.",
+    healthyHighlights: [
+      "Freshly brewed single-estate artisanal espresso",
+      "Genuine imported mascarpone cheese & fresh dairy cream",
+      "Zero alcohol or artificial coffee syrups",
+      "Finished with pure 100% unsweetened Dutch cocoa dust"
+    ],
+    ingredients: [
+      "Artisanal Espresso & Arabica Brew",
+      "Imported Mascarpone Cheese",
+      "Fresh Dairy Cream",
+      "Handmade Savoiardi Sponge",
+      "Free-Range Egg Yolks",
+      "Raw Sugar",
+      "100% Dutch Cocoa"
+    ],
+    nutrition: {
+      servingSize: "1 Serving (125g)",
+      calories: "260 kcal",
+      protein: "5.2g",
+      carbs: "22g",
+      healthyFats: "17g",
+      refinedSugar: "0g"
+    },
+    allergens: "Contains Dairy, Eggs, and Wheat.",
+    isFeatured: false
+  },
+  {
+    id: "banana-cake",
+    slug: "banana-cake",
+    name: "Banana Cake",
+    category: "Cakes",
+    badge: "Naturally Moist",
+    tagline: "Moist banana sponge cake baked fresh with ripe bananas",
+    rating: 4.88,
+    reviewCount: 78,
+    basePrice: 290,
+    packSizes: [
+      { size: "Loaf (450g)", pieces: 1, price: 290, isPopular: true },
+      { size: "Family Loaf (900g)", pieces: 1, price: 540, isPopular: false, savings: "Save ₹40" }
+    ],
+    image: "/assets/menu/banana-cake.jpg",
+    gallery: [
+      "/assets/menu/banana-cake.jpg"
+    ],
+    shortDesc: "Wholesome, naturally sweet sponge cake made with caramelized ripe bananas and stoneground wheat.",
+    fullDesc: "Sun-ripened local Robusta bananas caramelized naturally and folded into unbleached wheat flour and country butter. Subtly scented with freshly grated nutmeg and cinnamon for a wholesome, comforting tea-time slice.",
+    healthyHighlights: [
+      "Over 40% real caramelized ripe bananas for natural sweetness",
+      "Stoneground whole wheat with healthy prebiotic fiber",
+      "No refined white flour, palm oil, or preservatives",
+      "Baked to a golden crust with a tender, moist interior"
+    ],
+    ingredients: [
+      "Ripe Natural Robusta Bananas",
+      "Stoneground Wheat",
+      "Fresh Churned Butter",
+      "Organic Jaggery & Raw Cane",
+      "Farm Fresh Eggs",
+      "Ceylon Cinnamon & Nutmeg",
+      "Baking Soda"
+    ],
+    nutrition: {
+      servingSize: "1 Slice (75g)",
+      calories: "185 kcal",
+      protein: "3.9g",
+      carbs: "28g",
+      healthyFats: "7g",
+      refinedSugar: "0g (Naturally sweetened)"
+    },
+    allergens: "Contains Dairy, Eggs, and Wheat.",
+    isFeatured: false
+  },
+  {
+    id: "lava-cake",
+    slug: "lava-cake",
+    name: "Lava Cake",
+    category: "Cakes",
+    badge: "Molten Heart",
+    tagline: "Warm chocolate cake with a molten center",
+    rating: 4.95,
+    reviewCount: 140,
+    basePrice: 240,
+    packSizes: [
+      { size: "Twin Pack (2 pcs)", pieces: 2, price: 240, isPopular: true },
+      { size: "Party Pack (4 pcs)", pieces: 4, price: 450, isPopular: false, savings: "Save ₹30" }
+    ],
+    image: "/assets/menu/lava-cake.jpg",
+    gallery: [
+      "/assets/menu/lava-cake.jpg"
+    ],
+    shortDesc: "Warm single-origin dark chocolate cake that reveals a rich, molten chocolate river when sliced.",
+    fullDesc: "Pure chocolate drama. Individual dark chocolate cakes baked to a soft outer cake ring while maintaining a luscious molten chocolate lava center. Warm for 20 seconds before serving for chocolate bliss.",
+    healthyHighlights: [
+      "72% single-origin dark chocolate center with genuine molten flow",
+      "Pure dairy butter and free-range egg emulsion",
+      "Zero artificial molten fillings, gels, or stabilizers",
+      "Best enjoyed warm with a scoop of vanilla ice cream"
+    ],
+    ingredients: [
+      "72% Single-Origin Cocoa Couverture",
+      "Cold-Churned Farm Butter",
+      "Organic Raw Cane",
+      "Free-Range Eggs",
+      "Stoneground Wheat",
+      "Madagascar Vanilla",
+      "Sea Salt"
+    ],
+    nutrition: {
+      servingSize: "1 Lava Cake (90g)",
+      calories: "250 kcal",
+      protein: "5.0g",
+      carbs: "25g",
+      healthyFats: "15g",
+      refinedSugar: "0g"
+    },
+    allergens: "Contains Dairy, Eggs, and Wheat.",
+    isFeatured: true
+  },
+  {
+    id: "mutta-mittai",
+    slug: "mutta-mittai",
+    name: "Mutta Mittai",
+    category: "Specials",
+    badge: "Traditional Heritage",
+    tagline: "Traditional egg-based sweet crafted with pure country eggs & cardamom",
+    rating: 4.99,
+    reviewCount: 124,
+    basePrice: 250,
+    packSizes: [
+      { size: "Box of 6", pieces: 6, price: 250, isPopular: false },
+      { size: "Box of 12", pieces: 12, price: 480, isPopular: true, savings: "Save ₹20" },
+      { size: "Box of 24", pieces: 24, price: 890, isPopular: false, savings: "Save ₹110" }
+    ],
+    image: "/assets/menu/muttai-mittai.jpg",
+    gallery: [
+      "/assets/menu/muttai-mittai.jpg"
+    ],
+    shortDesc: "Heritage Tamil Nadu egg sweet slow-simmered with farm egg yolks, pure ghee, and cardamom sugar glaze.",
+    fullDesc: "An authentic, cherished Tamil heritage delicacy from coastal Tamil Nadu. Handcrafted in small batches using rich farm egg yolks, pure desi ghee, and cardamom-infused sugar syrup cooked gently to achieve that signature golden-brown, glossy melt-in-the-mouth texture.",
+    healthyHighlights: [
+      "Rare traditional South Indian heritage recipe made from scratch",
+      "100% pure desi ghee and free-range country eggs",
+      "Fragrant green cardamom and slow-cooked caramelized glaze",
+      "Zero artificial food colors, preservatives, or fillers"
+    ],
+    ingredients: [
+      "Farm Fresh Free-Range Egg Yolks",
+      "Pure Desi Cow Ghee",
+      "Organic Cane Sugar Syrup",
+      "Fresh Ground Green Cardamom",
+      "A Hint of Saffron"
+    ],
+    nutrition: {
+      servingSize: "2 Sweet Pieces (50g)",
+      calories: "170 kcal",
+      protein: "4.5g",
+      carbs: "18g",
+      healthyFats: "9g",
+      refinedSugar: "0g (Pure cane syrup)"
+    },
+    allergens: "Contains Eggs and Dairy (Ghee).",
     isFeatured: false
   }
 ];

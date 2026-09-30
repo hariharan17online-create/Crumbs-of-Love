@@ -182,7 +182,7 @@ class MainApp {
         if (!q) {
           searchResults.innerHTML = `
             <div class="py-6 text-center text-xs text-cocoa-muted">
-              Start typing to search freshly baked brownies, gift boxes or healthy ingredients...
+              Start typing to search freshly baked brownies, cakes, tres leches, or specials...
             </div>
           `;
           return;
@@ -197,7 +197,7 @@ class MainApp {
         if (matches.length === 0) {
           searchResults.innerHTML = `
             <div class="py-6 text-center text-xs text-cocoa-muted">
-              No baked goodies found for "${q}". Try "fudge", "walnut", or "eggless".
+              No baked goodies found for "${q}". Try "brownie", "cake", or "tres leches".
             </div>
           `;
           return;
